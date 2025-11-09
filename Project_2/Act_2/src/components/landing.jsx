@@ -7,7 +7,7 @@ export function LandingPage() {
   const [loading, setLoading] = useState(true);
 
 
-  const API_URL = "/public/data/landingData.json";
+  const API_URL = "/data/landingData.json";
 
   useEffect(() => {
     const fetchBooks = async () => {
