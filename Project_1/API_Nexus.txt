@@ -1,0 +1,11 @@
+Links:
+
+- https://mock.apidog.com/m1/1088805-1078197-default/information
+
+- https://mock.apidog.com/m1/1088805-1078197-default/books
+
+- https://mock.apidog.com/m1/1088805-1078197-default/books?id=1&category=Fiction
+
+- https://mock.apidog.com/m1/1088805-1078197-default/list_members
+
+- https://mock.apidog.com/m1/1088805-1078197-default/members

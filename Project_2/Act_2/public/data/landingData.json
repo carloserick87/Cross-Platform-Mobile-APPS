@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "title": "Deja de Ser Tú",
+      "author": "Dispenza",
+      "cover": "https://m.media-amazon.com/images/I/71O8u5U-x8L._SY522_.jpg"
+    },
+    {
+      "title": "El preso",
+      "author": "Viktor Frankl",
+      "cover": "https://m.media-amazon.com/images/I/81hf9Wf+-GL._SY522_.jpg"
+    },
+    {
+      "title": "Cien años de soledad",
+      "author": "Gabriel García Márquez",
+      "cover": "https://m.media-amazon.com/images/I/A1lNJP8sC6L._SY522_.jpg"
+    },
+    {
+      "title": "El principito",
+      "author": "Antoine de Saint-Exupéry",
+      "cover": "https://m.media-amazon.com/images/I/61FznSTQxVL._SY522_.jpg"
+    }
+  ]
+}
+
