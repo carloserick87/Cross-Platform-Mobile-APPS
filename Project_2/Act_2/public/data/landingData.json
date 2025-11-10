@@ -19,7 +19,29 @@
       "title": "El principito",
       "author": "Antoine de Saint-Exupéry",
       "cover": "https://m.media-amazon.com/images/I/61FznSTQxVL._SY522_.jpg"
+    },
+    {
+      "title": "Ness",
+      "author": "Patrick Ness",
+      "cover": "https://m.media-amazon.com/images/I/81S8rpJ43xL._SY522_.jpg"
+    },
+    
+    {
+      "title": "The Inheritance Games",
+      "author": "Jennifer Lynn Barnes",
+      "cover": "https://m.media-amazon.com/images/I/81UstdoeFqL._SY522_.jpg"
+    },
+    {
+      "title": "The Naturals",
+      "author": "Jennifer Lynn Barnes",
+      "cover": "https://m.media-amazon.com/images/I/71stQPg2BNL._SY522_.jpg"
+    },
+    {
+      "title": "Queen 1",
+      "author": "Jean Gill",
+      "cover": "https://m.media-amazon.com/images/I/91G+s4d9ElL._AC_UY218_.jpg"
     }
+    
   ]
 }
 

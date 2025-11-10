@@ -65,39 +65,35 @@ export function LandingPage() {
 
 
       {/* 🟨 LIBROS DESTACADOS */}
-      <section className="max-w-6xl w-full px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-          Libros destacados de la semana
-        </h2>
+      <section className="max-w-6xl w-full px-6 py-20 mx-auto">
+  <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
+    Libros destacados de la semana
+  </h2>
 
-        {loading ? (
-          <p className="text-center text-gray-600">Cargando libros...</p>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {books.map((book, index) => (
-              <div
-                key={index}
-                className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition"
-              >
-                <img
-                  src={book.cover}
-                  alt={book.title}
-                  className="w-full h-60 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {book.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm">{book.author}</p>
-                  <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                    Ver más
-                  </button>
-                </div>
-              </div>
-            ))}
+  {loading ? (
+    <p className="text-center text-gray-600">Cargando libros...</p>
+  ) : (
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {books.map((book, index) => (
+        <div
+          key={index}
+          className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1"
+        >
+          <img src={book.cover} alt={book.title} className="w-full h-56 sm:h-60 object-cover"/>
+          <div className="p-4">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+              {book.title}
+            </h3>
+            <p className="text-gray-500 text-sm">{book.author}</p>
+            <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+              Ver más
+            </button>
           </div>
-        )}
-      </section>
+        </div>
+      ))}
+    </div>
+  )}
+</section>
 
     
       <section className="bg-blue-50 w-full py-20">
