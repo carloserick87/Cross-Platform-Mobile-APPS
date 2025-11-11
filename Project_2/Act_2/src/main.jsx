@@ -1,17 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { LandingPage } from './components/landing.jsx'
-import  NavBar  from './components/navBar.jsx'
-import { Footer }  from './components/footer.jsx'
-import { AboutUs } from './components/about.jsx'
-import './index.css'
+// src/main.jsx
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/app.router";
+import "./index.css";
 
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <NavBar />
-    <LandingPage />
-    <AboutUs />
-    <Footer />
-  </StrictMode>,
-)
+    <RouterProvider router={router} />
+  </StrictMode>
+);

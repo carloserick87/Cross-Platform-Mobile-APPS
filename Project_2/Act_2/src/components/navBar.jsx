@@ -1,5 +1,7 @@
 // Navbar
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,11 +20,11 @@ export default function Navbar() {
 
           {/* Center: Navigation (Desktop) */}
           <nav className="hidden md:flex space-x-8 items-center">
-            <a href="#" className="text-gray-700 hover:text-yellow-400">Inicio</a>
-            <a href="#" className="text-gray-700 hover:text-yellow-400">Sobre Nosotros</a>
-            <a href="#" className="text-gray-700 hover:text-yellow-400">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-yellow-400">Eventos</a>
-            <a href="#" className="text-gray-700 hover:text-yellow-400">Contacto</a>
+            <Link to="/" className="text-gray-700 hover:text-yellow-400">Inicio</Link>
+            <Link to="/about" className="text-gray-700 hover:text-yellow-400">Sobre Nosotros</Link>
+            <Link to="/blog" className="text-gray-700 hover:text-yellow-400">Blog</Link>
+            <Link to="/events" className="text-gray-700 hover:text-yellow-400">Eventos</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-yellow-400">Contacto</Link>
           </nav>
 
           {/* Right: Search, cart, button */}
@@ -79,32 +81,69 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-inner border-t border-gray-200">
-          <nav className="flex flex-col space-y-2 px-4 py-4">
-            <a href="#" className="text-gray-700 hover:text-gray-900">Inicio</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">Sobre Nosotros</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">Blog</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">Eventos</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900">Contacto</a>
-            <div className="flex items-center mt-4 border border-gray-200 rounded-md overflow-hidden">
-              <input
-                type="text"
-                placeholder="Buscar..."
-                className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"
-              />
-              <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </div>
-            <a
-              href="#"
-              className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-blue-600 hover:bg-blue-700"
-            >
-              Click me
-            </a>
-          </nav>
-        </div>
+  <nav className="flex flex-col space-y-2 px-4 py-4">
+    <Link
+      to="/"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-yellow-400 hover:text-white active:bg-yellow-500"
+    >
+      Inicio
+    </Link>
+    <Link
+      to="/about"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-indigo-500 hover:text-white active:bg-indigo-600"
+    >
+      Sobre Nosotros
+    </Link>
+    <Link
+      to="/blog"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-green-500 hover:text-white active:bg-green-600"
+    >
+      Blog
+    </Link>
+    <Link
+      to="/events"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-pink-500 hover:text-white active:bg-pink-600"
+    >
+      Eventos
+    </Link>
+    <Link
+      to="/contact"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-blue-500 hover:text-white active:bg-blue-600"
+    >
+      Contacto
+    </Link>
+
+    <div className="flex items-center mt-4 border border-gray-200 rounded-md overflow-hidden">
+      <input
+        type="text"
+        placeholder="Buscar..."
+        className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"
+      />
+      <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-gray-600"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <a
+      href="#"
+      className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-blue-600 hover:bg-blue-700 transition-all duration-200"
+    >
+      Click me
+    </a>
+  </nav>
+</div>
+
       )}
     </header>
   );
