@@ -63,7 +63,7 @@ export function LandingPage() {
              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                {books.map((book, index) => (
             <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
-                <img src={book.cover} alt={book.title} className="w-full h-70 object-contain"/>
+                <img src={book.cover} alt={book.title} className="w-full h-64 object-contain"/>
 
           {/* Contenido */}
           <div className="p-4 text-center">
