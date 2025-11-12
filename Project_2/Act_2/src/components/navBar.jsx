@@ -50,7 +50,7 @@ export default function Navbar() {
             </button>
 
             {/* CTA button */}
-            <a href="#" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-blue-700">
+            <a href="#" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
               Click me
             </a>
 
@@ -80,31 +80,31 @@ export default function Navbar() {
   <nav className="flex flex-col space-y-2 px-4 py-4">
     <Link
       to="/"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-yellow-400 hover:text-white active:bg-yellow-500"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
     >
       Inicio
     </Link>
     <Link
       to="/about"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-indigo-500 hover:text-white active:bg-indigo-600"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
     >
       Sobre Nosotros
     </Link>
     <Link
       to="/blog"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-green-500 hover:text-white active:bg-green-600"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
     >
       Blog
     </Link>
     <Link
       to="/events"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-pink-500 hover:text-white active:bg-pink-600"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
     >
       Eventos
     </Link>
     <Link
       to="/contact"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 hover:bg-blue-500 hover:text-white active:bg-blue-600"
+      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
     >
       Contacto
     </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
         placeholder="Buscar..."
         className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"
       />
-      <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50">
+      <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50 bg-amber-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5 text-gray-600"
@@ -133,7 +133,7 @@ export default function Navbar() {
 
     <a
       href="#"
-      className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-blue-600 hover:bg-blue-700 transition-all duration-200"
+      className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300 transition-all duration-200"
     >
       Click me
     </a>
