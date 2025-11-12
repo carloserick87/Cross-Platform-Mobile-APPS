@@ -2,44 +2,52 @@
   "books": [
     {
       "title": "Deja de Ser Tú",
-      "author": "Dispenza",
-      "cover": "https://m.media-amazon.com/images/I/71O8u5U-x8L._SY522_.jpg"
+      "price": 19.99,
+      "cover": "https://m.media-amazon.com/images/I/71O8u5U-x8L._SY522_.jpg",
+      "reviews": 124
     },
     {
       "title": "El preso",
-      "author": "Viktor Frankl",
-      "cover": "https://m.media-amazon.com/images/I/81hf9Wf+-GL._SY522_.jpg"
+      "price": 3.36,
+      "cover": "https://m.media-amazon.com/images/I/81hf9Wf+-GL._SY522_.jpg",
+      "reviews": 89
     },
     {
       "title": "Cien años de soledad",
-      "author": "Gabriel García Márquez",
-      "cover": "https://m.media-amazon.com/images/I/A1lNJP8sC6L._SY522_.jpg"
+      "price": 12.00,
+      "cover": "https://m.media-amazon.com/images/I/A1lNJP8sC6L._SY522_.jpg",
+      "reviews": 256
     },
     {
       "title": "El principito",
-      "author": "Antoine de Saint-Exupéry",
-      "cover": "https://m.media-amazon.com/images/I/61FznSTQxVL._SY522_.jpg"
+      "price": 7.50,
+      "cover": "https://m.media-amazon.com/images/I/61FznSTQxVL._SY522_.jpg",
+      "reviews": 342
     },
     {
       "title": "Ness",
-      "author": "Patrick Ness",
-      "cover": "https://m.media-amazon.com/images/I/81S8rpJ43xL._SY522_.jpg"
+      "price": 9.99,
+      "cover": "https://m.media-amazon.com/images/I/81S8rpJ43xL._SY522_.jpg",
+      "reviews": 45
     },
     
     {
       "title": "The Inheritance Games",
-      "author": "Jennifer Lynn Barnes",
-      "cover": "https://m.media-amazon.com/images/I/81UstdoeFqL._SY522_.jpg"
+      "price": 14.99,
+      "cover": "https://m.media-amazon.com/images/I/81UstdoeFqL._SY522_.jpg",
+      "reviews": 150
     },
     {
       "title": "The Naturals",
-      "author": "Jennifer Lynn Barnes",
-      "cover": "https://m.media-amazon.com/images/I/71stQPg2BNL._SY522_.jpg"
+      "price": 11.99,
+      "cover": "https://m.media-amazon.com/images/I/71stQPg2BNL._SY522_.jpg",
+      "reviews": 98
     },
     {
       "title": "Queen 1",
-      "author": "Jean Gill",
-      "cover": "https://m.media-amazon.com/images/I/91G+s4d9ElL._AC_UY218_.jpg"
+      "price": 13.49,
+      "cover": "https://m.media-amazon.com/images/I/91G+s4d9ElL._AC_UY218_.jpg",
+      "reviews": 76
     }
     
   ]

@@ -5,6 +5,7 @@ import { AboutUs } from "@/components/about";
 import { Blog } from "@/components/blog";
 import { Events } from "@/components/events";
 import { Contact } from "@/components/contact";
+
 export const router = createBrowserRouter([
   {
     path: "/",

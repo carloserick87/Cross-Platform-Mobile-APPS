@@ -16,10 +16,11 @@ export function LandingPage() {
         if (!response.ok) throw new Error("No se pudo cargar el JSON");
         const data = await response.json();
 
-        const formattedBooks = data.books.map((book) => ({
+       const formattedBooks = data.books.map((book) => ({
           title: book.title,
-          author: book.author || "Autor desconocido",
+          price: book.price,
           cover: book.cover || "https://via.placeholder.com/300x400?text=Sin+Portada",
+          reviews: book.reviews ?? 0,
         }));
 
         setBooks(formattedBooks);
@@ -38,62 +39,71 @@ export function LandingPage() {
 
   return (
     <div className="flex flex-col items-center w-full mt-28">
-      {/* 🟦 HERO SECTION */}
      <section className="relative text-white text-center w-full max-w-6xl rounded-xl overflow-hidden shadow-2xl">
-  <img
-    src={heroImage}
-    alt="Hero background"
-    className="absolute inset-0 w-full h-full object-cover z-0"
-  />
+      <img src={heroImage} alt="Hero background" className="absolute inset-0 w-full h-full object-cover z-0"/>
 
-  {/* 🔥 Capa negra total con transparencia */}
-  <div className="absolute inset-0 bg-linear-to-b from-black/75 to-black/75 z-0"></div>
+    <div className="absolute inset-0 bg-linear-to-b from-black/75 to-black/75 z-0"></div>
+      <div className="relative z-10 flex flex-col items-center justify-center h-[60vh] px-6">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Descubre tu siguiente libro favorito</h1>
+          <p className="text-lg md:text-xl mb-6 max-w-2xl">Explora millones de títulos, autores y descuentos exclusivos cada semana.</p>
 
-  <div className="relative z-10 flex flex-col items-center justify-center h-[60vh] px-6">
-    <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-      Descubre tu siguiente libro favorito
-    </h1>
-    <p className="text-lg md:text-xl mb-6 max-w-2xl">
-      Explora millones de títulos, autores y descuentos exclusivos cada semana.
-    </p>
-    <button className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition">
-      Reserva ahora
-    </button>
-  </div>
-</section>
+        <button className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition">
+          Reserva ahora
+        </button>
+      </div>
+    </section>
 
 
+    <section className="max-w-6xl w-full px-6 py-20 mx-auto">
+      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Libros destacados de la semana</h2>
 
-      {/* 🟨 LIBROS DESTACADOS */}
-      <section className="max-w-6xl w-full px-6 py-20 mx-auto">
-  <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">
-    Libros destacados de la semana
-  </h2>
+         {loading ? (
+          <p className="text-center text-gray-600">Cargando libros...</p>
+            ) : (
+             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+               {books.map((book, index) => (
+            <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
+                <img src={book.cover} alt={book.title} className="w-full h-70 object-contain"/>
 
-  {loading ? (
-    <p className="text-center text-gray-600">Cargando libros...</p>
-  ) : (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {books.map((book, index) => (
-        <div
-          key={index}
-          className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1"
-        >
-          <img src={book.cover} alt={book.title} className="w-full h-56 sm:h-60 object-cover"/>
-          <div className="p-4">
-            <h3 className="text-base sm:text-lg font-semibold text-gray-800">
+          {/* Contenido */}
+          <div className="p-4 text-center">
+            {/* Precio */}
+            <p className="text-lg font-semibold text-gray-800 mb-1">
+              €{book.price?.toFixed(2) ?? "—"}
+            </p>
+
+            {/* Título */}
+            <h3 className="text-sm sm:text-base font-medium text-gray-700 truncate">
               {book.title}
             </h3>
-            <p className="text-gray-500 text-sm">{book.author}</p>
-            <button className="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-              Ver más
-            </button>
+
+            {/* Estrellas y reseñas */}
+            <div className="flex justify-center items-center mt-2">
+              {/* ⭐⭐⭐⭐⭐ */}
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.463a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.388-2.463a1 1 0 00-1.175 0l-3.388 2.463c-.784.57-1.838-.196-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.045 9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.967z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="ml-2 text-gray-600 text-sm">
+                {book.reviews ?? 0}
+              </span>
+            </div>
           </div>
         </div>
       ))}
     </div>
   )}
 </section>
+
 
     
       <section className="bg-blue-50 w-full py-20">
