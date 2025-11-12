@@ -41,7 +41,7 @@ export const Events = () => {
   return (
     <section className="bg-gray-50 min-h-screen py-20 px-6 text-gray-800">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-indigo-700 mb-6">Próximos Eventos</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">Próximos Eventos</h2>
         <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
           En Nexus organizamos actividades para fomentar la lectura, la creatividad
           y el encuentro entre personas apasionadas por los libros. ¡No te las pierdas!
@@ -59,7 +59,7 @@ export const Events = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6 text-left">
-                <h3 className="text-2xl font-semibold mb-3 text-indigo-700 hover:text-indigo-500 transition">
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800 hover:text-yellow-500  transition">
                   {event.title}
                 </h3>
 
@@ -76,7 +76,7 @@ export const Events = () => {
                 </div>
 
                 <p className="text-gray-600 mb-4">{event.description}</p>
-                <button className="text-indigo-600 font-medium hover:underline">
+                <button className="text-yellow-500  font-medium hover:underline">
                   Reservar lugar →
                 </button>
               </div>

@@ -73,9 +73,6 @@ export default function AnimatedTestimonialsDemo() {
     return () => clearTimeout(t);
   }, [index]);
 
-  const prev = () => setIndex((i) => (i - 1 + data.length) % data.length);
-  const next = () => setIndex((i) => (i + 1) % data.length);
-
   return (
     <div className="w-full py-12">
       <div className="max-w-4xl mx-auto px-4">
@@ -124,7 +121,7 @@ export default function AnimatedTestimonialsDemo() {
                   onClick={() => setIndex(i)}
                   aria-label={`Ir al testimonio ${i + 1}`}
                   className={`w-2 h-2 rounded-full transition ${
-                    i === index ? "bg-blue-600" : "bg-gray-300"
+                    i === index ? "bg-amber-300" : "bg-gray-300"
                   }`}
                 />
               ))}

@@ -10,7 +10,6 @@ export default function Navbar() {
     <header className="bg-white/80 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Left: Logo */}
           <div className="flex items-center shrink-0">
             <div className="flex items-end gap-2">
               <span className="text-2xl font-semibold text-gray-800">Nexus</span>
@@ -51,10 +50,7 @@ export default function Navbar() {
             </button>
 
             {/* CTA button */}
-            <a
-              href="#"
-              className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-blue-600 hover:bg-blue-700"
-            >
+            <a href="#" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-blue-700">
               Click me
             </a>
 

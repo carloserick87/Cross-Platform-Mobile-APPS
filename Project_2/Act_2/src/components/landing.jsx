@@ -63,32 +63,22 @@ export function LandingPage() {
              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                {books.map((book, index) => (
             <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
-                <img src={book.cover} alt={book.title} className="w-full h-64 object-contain"/>
+                <img src={book.cover} alt={book.title} className="w-screen h-64 object-contain"/>
 
-          {/* Contenido */}
-          <div className="p-4 text-center">
-            {/* Precio */}
-            <p className="text-lg font-semibold text-gray-800 mb-1">
-              €{book.price?.toFixed(2) ?? "—"}
-            </p>
+          
+            <div className="p-4 text-center">
+              <p className="text-lg font-semibold text-gray-500 mb-1">
+                €{book.price?.toFixed(2) ?? "—"}
+              </p>
 
-            {/* Título */}
             <h3 className="text-sm sm:text-base font-medium text-gray-700 truncate">
               {book.title}
             </h3>
 
-            {/* Estrellas y reseñas */}
             <div className="flex justify-center items-center mt-2">
-              {/* ⭐⭐⭐⭐⭐ */}
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-4 h-4"
-                  >
+                  <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.463a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.388-2.463a1 1 0 00-1.175 0l-3.388 2.463c-.784.57-1.838-.196-1.539-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.045 9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.967z" />
                   </svg>
                 ))}
@@ -109,21 +99,21 @@ export function LandingPage() {
       <section className="bg-blue-50 w-full py-20">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <i className="fas fa-shipping-fast text-blue-600 text-4xl mb-4"></i>
+            <i className="fas fa-shipping-fast text-yellow-500 text-4xl mb-4"></i>
             <h3 className="text-xl font-semibold mb-2">Envío rápido</h3>
             <p className="text-gray-600">
               Recibe tus libros en tiempo récord, sin demoras.
             </p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <i className="fas fa-book-open text-blue-600 text-4xl mb-4"></i>
+            <i className="fas fa-book-open text-yellow-500 text-4xl mb-4"></i>
             <h3 className="text-xl font-semibold mb-2">Catálogo variado</h3>
             <p className="text-gray-600">
               Miles de títulos para todos los gustos y edades.
             </p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition">
-            <i className="fas fa-tags text-blue-600 text-4xl mb-4"></i>
+            <i className="fas fa-tags text-yellow-500 text-4xl mb-4"></i>
             <h3 className="text-xl font-semibold mb-2">Ofertas exclusivas</h3>
             <p className="text-gray-600">
               Descuentos y promociones cada semana.

@@ -37,21 +37,21 @@ export const Contact = () => {
           <h2 className="text-4xl font-bold text-indigo-700 mb-6">Contáctanos</h2>
           <p className="text-lg text-gray-600 mb-8">
             Si tienes alguna pregunta, sugerencia o simplemente quieres saludar,
-            no dudes en escribirnos. En <span className="font-semibold text-indigo-600">Nexus</span>
-            nos encanta conectar con nuestros lectores.
+            no dudes en escribirnos. En <span className="font-semibold text-black ">Nexus </span><span className="font-semibold text-yellow-500">Books </span>
+             nos encanta conectar con nuestros lectores.
           </p>
 
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-center">
-              <MapPin className="w-5 h-5 mr-3 text-indigo-600" />
+              <MapPin className="w-5 h-5 mr-3 text-yellow-500" />
               Dublin City Centre, Irlanda
             </li>
             <li className="flex items-center">
-              <Phone className="w-5 h-5 mr-3 text-indigo-600" />
+              <Phone className="w-5 h-5 mr-3 text-yellow-500" />
               +353 01 234 5678
             </li>
             <li className="flex items-center">
-              <Mail className="w-5 h-5 mr-3 text-indigo-600" />
+              <Mail className="w-5 h-5 mr-3 text-yellow-500" />
               contacto@nexuslibrary.ie
             </li>
           </ul>
@@ -80,7 +80,7 @@ export const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   placeholder="Tu nombre"
                 />
               </div>
@@ -94,7 +94,7 @@ export const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   placeholder="tucorreo@email.com"
                 />
               </div>
@@ -108,7 +108,7 @@ export const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                   placeholder="Escribe tu mensaje..."
                 ></textarea>
               </div>

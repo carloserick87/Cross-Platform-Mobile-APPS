@@ -1,3 +1,4 @@
+//Blog
 import React from "react";
 import { Calendar, User } from "lucide-react";
 
@@ -38,7 +39,7 @@ export const Blog = () => {
   return (
     <section className="bg-gray-50 min-h-screen py-20 px-6 text-gray-800">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-indigo-700 mb-6">Blog Nexus</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">Blog Nexus</h2>
         <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
           Noticias, reseñas y artículos sobre el fascinante mundo de los libros,
           la creatividad y la cultura. ¡Inspírate con nuestras publicaciones!
@@ -56,7 +57,7 @@ export const Blog = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6 text-left">
-                <h3 className="text-2xl font-semibold mb-3 text-indigo-700 hover:text-indigo-500 transition">
+                <h3 className="text-2xl font-semibold mb-3 text-gray-800 hover:text-yellow-500 transition">
                   {post.title}
                 </h3>
                 <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
@@ -68,7 +69,7 @@ export const Blog = () => {
                   </span>
                 </div>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <button className="text-indigo-600 font-medium hover:underline">
+                <button className="text-yellow-500 font-medium hover:underline">
                   Leer más →
                 </button>
               </div>

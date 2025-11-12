@@ -43,7 +43,7 @@ El proyecto también forma parte del máster en Desarrollo Front-End y UX/UI, in
 
 ```bash
 
- git clone https://github.com/tuusuario/libreria-nexus.git
+ git clone https://github.com/carloserick87/Cross-Platform-Mobile-APPS.git
 ```
 
 Instala las dependencias:
@@ -60,7 +60,7 @@ npm run dev
 
 ## Despliegue
 
-El proyecto está desplegado en Vercel, accesible desde: [https://cross-platform-mobile-apps.vercel.app/](https://cross-platform-mobile-apps.vercel.app/) (cambia esto por tu enlace real)
+El proyecto está desplegado en Vercel, accesible desde: [https://cross-platform-mobile-apps.vercel.app/](https://cross-platform-mobile-apps.vercel.app/)
 
 ## Autor
 
@@ -68,6 +68,6 @@ El proyecto está desplegado en Vercel, accesible desde: [https://cross-platform
 
 Desarrollador Web & UI Developer
 
-Actualmente en Dublín, Irlanda
+Dublín, Irlanda
 
 <https://www.linkedin.com/in/carloserickdev>
