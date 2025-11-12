@@ -129,12 +129,9 @@ export default function Navbar() {
           />
         </svg>
       </button>
-    </div>
+        </div>
 
-    <a
-      href="#"
-      className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300 transition-all duration-200"
-    >
+    <a href="#" className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300 ">
       Click me
     </a>
   </nav>

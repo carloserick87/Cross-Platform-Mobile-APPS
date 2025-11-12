@@ -47,7 +47,7 @@ export function LandingPage() {
         <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Descubre tu siguiente libro favorito</h1>
           <p className="text-lg md:text-xl mb-6 max-w-2xl">Explora millones de títulos, autores y descuentos exclusivos cada semana.</p>
 
-        <button className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition">
+        <button className="bg-white text-yellow-500 font-semibold px-8 py-3 rounded-md hover:bg-gray-200 transition">
           Reserva ahora
         </button>
       </div>
