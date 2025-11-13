@@ -9,7 +9,8 @@ import { Contact } from "@/components/contact";
 import { Login } from "@/components/login";
 import { Register } from "@/components/signup";
 import { Dashboard } from "@/components/dashboard";
-import { ProtectedRoute } from "./ProtectedRoute";
+import ProtectedRoute from "@/router/ProtectedRoute";
+
 
 export const router = createBrowserRouter([
   {
