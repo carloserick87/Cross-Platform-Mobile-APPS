@@ -44,7 +44,8 @@ export const useFetchData = (url, transformFn) => {
     };
 
     fetchData();
-  }, [url, transformFn]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]);
 
   return { data, loading, error };
 };

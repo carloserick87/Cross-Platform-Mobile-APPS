@@ -1,14 +1,17 @@
-// LandingPage.jsx
+// LandingPage
+import { useCallback } from "react";
 import { useFetchData } from "../hooks/useFetchData.jsx";
 import AnimatedTestimonialsDemo from "./ui/animated-testimonials-demo";
 
 export function LandingPage() {
-  const { data: books, loading } = useFetchData("/data/landingData.json", (json) => json.books || []);
+  const transformFn = useCallback((json) => json.books || [], []); 
+  const { data: books, loading, error } = useFetchData("/data/landingData.json", transformFn);
+
 
   const heroImage ="https://imagessl.casadellibro.com/t1e/cw/63/novedades_SEMANA42_2025_1200x430.webp";
 
   return (
-    <div className="flex flex-col items-center w-full mt-28">
+    <div key="/data/landingData.json" className="flex flex-col items-center w-full mt-28">
      <section className="relative text-white text-center w-full max-w-6xl rounded-xl overflow-hidden shadow-2xl">
       <img src={heroImage} alt="Hero background" className="absolute inset-0 w-full h-full object-cover z-0"/>
 

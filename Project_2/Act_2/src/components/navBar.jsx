@@ -1,33 +1,47 @@
-// Navbar
+// Navbar.jsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { NavLink, Link } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `text-gray-700 hover:text-yellow-400 transition-colors duration-200 ${
+      isActive ? "text-yellow-500 font-semibold" : ""
+    }`;
 
   return (
     <header className="bg-white/80 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center shrink-0">
-            <div className="flex items-end gap-2">
-              <span className="text-2xl font-semibold text-gray-800">Nexus</span>
-              <span className="text-2xl font-semibold text-yellow-500">Books</span>
-            </div>
-          </div>
+          {/* Logo */}
+          <Link to="/" className="flex items-end gap-2">
+            <span className="text-2xl font-semibold text-gray-800">Nexus</span>
+            <span className="text-2xl font-semibold text-yellow-500">Books</span>
+          </Link>
 
-          {/* Center: Navigation (Desktop) */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
-            <Link to="/" className="text-gray-700 hover:text-yellow-400">Inicio</Link>
-            <Link to="/about" className="text-gray-700 hover:text-yellow-400">Sobre Nosotros</Link>
-            <Link to="/blog" className="text-gray-700 hover:text-yellow-400">Blog</Link>
-            <Link to="/events" className="text-gray-700 hover:text-yellow-400">Eventos</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-yellow-400">Contacto</Link>
+            <NavLink to="/" className={linkClass} end>
+              Inicio
+            </NavLink>
+            <NavLink to="about" className={linkClass}>
+              Sobre Nosotros
+            </NavLink>
+            <NavLink to="blog" className={linkClass}>
+              Blog
+            </NavLink>
+            <NavLink to="events" className={linkClass}>
+              Eventos
+            </NavLink>
+            <NavLink to="contact" className={linkClass}>
+              Contacto
+            </NavLink>
           </nav>
 
-          {/* Right: Search, cart, button */}
+          {/* Right side */}
           <div className="flex items-center gap-4">
+            {/* Search */}
             <div className="hidden sm:flex items-center border border-gray-200 rounded-md overflow-hidden">
               <input
                 type="text"
@@ -36,23 +50,36 @@ export default function Navbar() {
                 className="px-3 py-2 w-48 focus:outline-none bg-transparent text-gray-700"
               />
               <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-600"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z"
+                    clipRule="evenodd"
+                  />
                 </svg>
               </button>
             </div>
 
             {/* Cart icon */}
-            <button aria-label="Carrito" className="p-2 rounded-md hover:text-yellow-400">
-                <span class="material-symbols-outlined">shopping_cart<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a1 1 0 11-2 0 1 1 0 012 0zm10 0a1 1 0 11-2 0 1 1 0 012 0z" />
-              </span>
+            <button
+              aria-label="Carrito"
+              className="p-2 rounded-md hover:text-yellow-400"
+            >
+              <span className="material-symbols-outlined">shopping_cart</span>
             </button>
 
             {/* CTA button */}
-            <a href="#" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
-              Click me
-            </a>
+            <Link
+              to="contact"
+              className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300"
+            >
+              Contáctanos
+            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -61,12 +88,34 @@ export default function Navbar() {
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-gray-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-gray-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               )}
             </button>
@@ -74,41 +123,32 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-inner border-t border-gray-200">
-  <nav className="flex flex-col space-y-2 px-4 py-4">
-    <Link to="/" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
-      Inicio
-    </Link>
-    <Link to="/about" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
-      Sobre Nosotros
-    </Link>
-    <Link to="/blog" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
-      Blog
-    </Link>
-    <Link to="/events" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
-      Eventos
-    </Link>
-    <Link to="/contact" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
-      Contacto
-    </Link>
-
-    <div className="flex items-center mt-4 border border-gray-200 rounded-md overflow-hidden">
-      <input type="text" placeholder="Buscar..." className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"/>
-      <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50 bg-amber-400">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
-          <path fillRule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd"/>
-        </svg>
-      </button>
+          <nav className="flex flex-col space-y-2 px-4 py-4">
+            {["/", "about", "blog", "events", "contact"].map((path, i) => {
+              const labels = ["Inicio", "Sobre Nosotros", "Blog", "Eventos", "Contacto"];
+              return (
+                <NavLink
+                  key={path}
+                  to={path}
+                  end={path === "/"}
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `text-gray-700 px-3 py-2 rounded-md transition-all duration-200 ${
+                      isActive
+                        ? "bg-yellow-400 text-white font-semibold"
+                        : "hover:bg-yellow-300 hover:text-white"
+                    }`
+                  }
+                >
+                  {labels[i]}
+                </NavLink>
+              );
+            })}
+          </nav>
         </div>
-
-    <a href="#" className="mt-3 inline-flex justify-center items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300 ">
-      Click me
-    </a>
-  </nav>
-</div>
-
       )}
     </header>
   );

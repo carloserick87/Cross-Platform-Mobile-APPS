@@ -1,18 +1,16 @@
 import { useFetchData } from "../hooks/useFetchData.jsx";
 import { CalendarDays, MapPin, Clock } from "lucide-react";
 
-export const Events = () => {
-  const { data: events, loading } = useFetchData("/data/eventsData.json", (json) =>
-    json.events.map((event) => ({
-      id: event.id,
-      title: event.title,
-      date: event.date,
-      time: event.time,
-      location: event.location,
-      image: event.image || "https://via.placeholder.com/600x400?text=Sin+Imagen",
-      description: event.description,
-    }))
+export function Events() {
+  const { data, loading, error } = useFetchData(
+    "/data/eventsData.json",
+    (json) => json.events || []
   );
+
+  const events = Array.isArray(data) ? data : [];
+
+  if (loading) return <p className="text-center mt-10">Cargando eventos...</p>;
+  if (error) return <p className="text-center text-red-500">{error}</p>;
 
   return (
     <section className="bg-gray-50 min-h-screen py-20 px-6 text-gray-800">
