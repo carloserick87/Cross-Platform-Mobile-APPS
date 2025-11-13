@@ -1,4 +1,3 @@
-// Navbar.jsx
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 
@@ -41,7 +40,7 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            {/* Search */}
+            {/* Search (Desktop) */}
             <div className="hidden sm:flex items-center border border-gray-200 rounded-md overflow-hidden">
               <input
                 type="text"
@@ -126,28 +125,70 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-inner border-t border-gray-200">
-          <nav className="flex flex-col space-y-2 px-4 py-4">
-            {["/", "about", "blog", "events", "contact"].map((path, i) => {
-              const labels = ["Inicio", "Sobre Nosotros", "Blog", "Eventos", "Contacto"];
-              return (
-                <NavLink
-                  key={path}
-                  to={path}
-                  end={path === "/"}
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `text-gray-700 px-3 py-2 rounded-md transition-all duration-200 ${
-                      isActive
-                        ? "bg-yellow-400 text-white font-semibold"
-                        : "hover:bg-yellow-300 hover:text-white"
-                    }`
-                  }
+          <div className="px-4 py-3">
+            {/* Search (Mobile) */}
+            <div className="flex items-center border border-gray-200 rounded-md overflow-hidden mb-3">
+              <input
+                type="text"
+                placeholder="Buscar libros..."
+                aria-label="Buscar libros"
+                className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"
+              />
+              <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-gray-600"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
                 >
-                  {labels[i]}
-                </NavLink>
-              );
-            })}
-          </nav>
+                  <path
+                    fillRule="evenodd"
+                    d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Mobile Links */}
+            <nav className="flex flex-col space-y-2 mb-4">
+              {["/", "about", "blog", "events", "contact"].map((path, i) => {
+                const labels = [
+                  "Inicio",
+                  "Sobre Nosotros",
+                  "Blog",
+                  "Eventos",
+                  "Contacto",
+                ];
+                return (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    end={path === "/"}
+                    onClick={() => setMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `text-gray-700 px-3 py-2 rounded-md transition-all duration-200 ${
+                        isActive
+                          ? "bg-yellow-400 text-white font-semibold"
+                          : "hover:bg-yellow-300 hover:text-white"
+                      }`
+                    }
+                  >
+                    {labels[i]}
+                  </NavLink>
+                );
+              })}
+            </nav>
+
+            {/* CTA Button (Mobile) */}
+            <Link
+              to="contact"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex justify-center items-center w-full px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300"
+            >
+              Contáctanos
+            </Link>
+          </div>
         </div>
       )}
     </header>
