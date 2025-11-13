@@ -1,0 +1,28 @@
+{
+    "blog":[
+    {
+      "id": 1,
+      "title": "Los libros más esperados de este mes",
+      "author": "Equipo Nexus",
+      "date": "11 de Noviembre, 2025",
+      "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80",
+      "excerpt": "Descubre las nuevas publicaciones que están revolucionando el mundo literario. Desde novelas de ciencia ficción hasta historias románticas imperdibles."
+    },
+    {
+      "id": 2,
+      "title": "Café y lectura: una combinación perfecta",
+      "author": "María López",
+      "date": "8 de Noviembre, 2025",
+      "image": "https://cdn.forbes.com.mx/2018/01/cafe-portada-.jpeg",
+      "excerpt": "Te contamos por qué disfrutar de un buen libro con una taza de café puede ser la mejor terapia para tu mente y creatividad."
+    },
+    {
+      "id": 3,
+      "title": "Cómo crear tu propio club de lectura",
+      "author": "Carlos Ramírez",
+      "date": "3 de Noviembre, 2025",
+      "image": "https://www.gasteizhoy.com/wp-content/uploads/2024/11/Club-de-lectura.png",
+      "excerpt":"Aprende a organizar tu propio grupo de lectura, elegir libros interesantes y fomentar debates literarios en comunidad."
+    }
+]
+}

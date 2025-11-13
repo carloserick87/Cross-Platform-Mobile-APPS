@@ -81,7 +81,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="Tu nombre"
+                  placeholder="nombre"
                 />
               </div>
 
@@ -95,7 +95,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  placeholder="tucorreo@email.com"
+                  placeholder="correo@email.com"
                 />
               </div>
 

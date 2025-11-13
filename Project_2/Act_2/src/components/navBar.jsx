@@ -78,55 +78,27 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white shadow-inner border-t border-gray-200">
   <nav className="flex flex-col space-y-2 px-4 py-4">
-    <Link
-      to="/"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
-    >
+    <Link to="/" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
       Inicio
     </Link>
-    <Link
-      to="/about"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
-    >
+    <Link to="/about" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
       Sobre Nosotros
     </Link>
-    <Link
-      to="/blog"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
-    >
+    <Link to="/blog" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
       Blog
     </Link>
-    <Link
-      to="/events"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
-    >
+    <Link to="/events" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
       Eventos
     </Link>
-    <Link
-      to="/contact"
-      className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300"
-    >
+    <Link to="/contact" className="text-gray-700 px-3 py-2 rounded-md transition-all duration-200 focus:bg-amber-300 hover:text-white active:bg-yellow-300">
       Contacto
     </Link>
 
     <div className="flex items-center mt-4 border border-gray-200 rounded-md overflow-hidden">
-      <input
-        type="text"
-        placeholder="Buscar..."
-        className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"
-      />
+      <input type="text" placeholder="Buscar..." className="px-3 py-2 w-full focus:outline-none bg-transparent text-gray-700"/>
       <button className="px-3 py-2 border-l border-gray-200 hover:bg-gray-50 bg-amber-400">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 text-gray-600"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fillRule="evenodd"
-            d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z"
-            clipRule="evenodd"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M12.9 14.32a8 8 0 111.414-1.414l4.387 4.386a1 1 0 01-1.414 1.415l-4.387-4.387zM8 14a6 6 0 100-12 6 6 0 000 12z" clipRule="evenodd"/>
         </svg>
       </button>
         </div>
