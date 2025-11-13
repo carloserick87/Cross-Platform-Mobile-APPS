@@ -9,8 +9,7 @@ import { Contact } from "@/components/contact";
 import { Login } from "@/components/login";
 import { Register } from "@/components/signup";
 import { Dashboard } from "@/components/dashboard";
-import ProtectedRoute from "@/router/ProtectedRoute";
-
+import ProtectedRoute from "@/router/ProtectedRoute.jsx";
 
 export const router = createBrowserRouter([
   {
