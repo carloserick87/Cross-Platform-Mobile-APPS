@@ -2,7 +2,7 @@
 
 import { Navigate } from "react-router-dom";
 
-export function ProtectedRoute({ children }) {
-  const isAuthenticated = localStorage.getItem("token");
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
+export default function ProtectedRoute({ children }) {
+  const user = JSON.parse(localStorage.getItem("registeredUser"));
+  return user ? children : <Navigate to="/register" replace />;
 }
