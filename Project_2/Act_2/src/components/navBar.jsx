@@ -1,4 +1,4 @@
-// NavBar
+// Navbar
 
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
@@ -58,7 +58,9 @@ export default function Navbar() {
             </button>
 
             {/* CTA button */}
-            <Link to="/login" className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
+            <Link
+              to="/login"
+              className="hidden sm:inline-flex items-center px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
               Login
             </Link>
 
@@ -136,7 +138,10 @@ export default function Navbar() {
             </nav>
 
             {/* CTA Button (Mobile) */}
-            <Link to="/login" onClick={() => setMenuOpen(false)} className="inline-flex justify-center items-center w-full px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
+            <Link
+              to="/login"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex justify-center items-center w-full px-4 py-2 rounded-md text-white font-medium shadow-sm bg-amber-400 hover:bg-amber-300">
               Login
             </Link>
 
