@@ -44,19 +44,21 @@ Este proyecto forma parte de una actividad académica del máster y demuestra el
 
 - React Native
 
-- Expo – Entorno de desarrollo y construcción de la app
+- Expo
 
-- JavaScript – Lenguaje de programación principal
+- Expo/vector-icons@15.0.3
 
-- NativeWind – Librería para el estilizado con clases tipo Tailwind
+- JavaScript
 
-- Expo Router – Sistema de navegación entre pantallas
+- NativeWind
 
-- Expo Haptics – Implementación de retroalimentación háptica
+- Expo Router
 
-- API simulada (Mock API) – Fuente de datos para libros y contenido dinámico
+- Expo Haptics
 
-- Git & GitHub – Control de versiones del proyecto
+- API simulada (Mock API)
+
+- Git & GitHub
 
 ## Instalación y ejecución
 
@@ -85,10 +87,14 @@ El proyecto está desplegado en Vercel, accesible desde
 
 ## Autor
 
- Carlos Erick Trujillo Mandujano
+ Carlos Erick Trujillo Mandujano.
+
+ Sergio Peña Pineda
 
 Desarrollador Web & UI Developer
 
-Dublín, Irlanda
+Dublín, Irlanda.
+
+Madrid, España,
 
 <https://www.linkedin.com/in/carloserickdev>
