@@ -1,85 +1,97 @@
-import { View, Text, Image, ImageBackground, TouchableOpacity, ScrollView} from "react-native";
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import BooksButton from "../../../components/BooksButton";
+import * as Haptics from "expo-haptics";
+import { router } from "expo-router";
 
 const HomeScreen = () => {
   return (
-    <ScrollView className="flex-1 bg-[#2c414f]">
-      
-      {/* HERO */}
-      <View className="h-[420px]">
-  <ImageBackground
-    source={{ uri: "https://images.unsplash.com/photo-1512820790803-83ca734da794" }}
-    resizeMode="cover"
-    className="flex-1 justify-center items-center px-6"
-  >
-    {/* Capa oscura encima de la imagen */}
-    <View className="absolute inset-0 bg-black/60" />
+    <ScrollView className="flex-1 bg-[#f7f4f2] px-5 pt-14">
 
-    <Text className="text-white text-4xl font-bold text-center">
-      <Text className="text-white">Nexus </Text>
-      <Text className="text-yellow-400">Books</Text>
-    </Text>
-    <Text className="text-gray-300 text-center mt-4 text-lg">
-      Descubre mundos a través de los libros
-    </Text>
+      <View>
+       
+      </View>
 
-    <TouchableOpacity className="bg-white px-8 py-3 rounded-full mt-6">
-      <Text className="text-black font-semibold text-lg">
+      {/* TITLE */}
+      <View className="mb-6">
+        <Text className="text-4xl font-bold text-black leading-tight">
+          Descubre tus{"\n"}mejores libros ahora
+        </Text>
+        <Text className="text-gray-500 mt-3">
+          Encuentra el libro de tus sueños según tus preferencias
+        </Text>
+      </View>
+
+      {/* SEARCH BAR */}
+      <View className="flex-row items-center bg-white rounded-2xl p-4 mb-10 shadow-sm">
+        <Ionicons name="search-outline" size={22} color="#999" />
+        <TextInput
+          placeholder="Search for a book"
+          placeholderTextColor="#999"
+          className="flex-1 ml-2 text-black"
+        />
+        <TouchableOpacity className="bg-[#f4a78a] p-3 rounded-xl">
+          <Ionicons name="options-outline" size={20} color="white" />
+        </TouchableOpacity>
+      </View>
+
+      {/* POPULAR NOW */}
+      <View className="mb-6 flex-row justify-between items-center">
+        <Text className="text-xl font-bold text-black">Popular ahora</Text>
+        <Text className="text-gray-500">Ver todo</Text>
+      </View>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
+        {[1, 2, 3].map((i) => (
+          <View
+            key={i}
+            className="bg-white rounded-3xl p-4 w-40 mr-4 shadow-sm"
+          >
+            <Image
+              source={{ uri: "https://picsum.photos/200/300?random=" + i }}
+              className="w-full h-48 rounded-2xl"
+            />
+            <Text className="font-semibold mt-3 text-black">Título del libro</Text>
+            <Text className="text-gray-500">$22.00</Text>
+          </View>
+        ))}
+      </ScrollView>
+
+      {/* BESTSELLERS */}
+      <View className="mb-6 flex-row justify-between items-center">
+        <Text className="text-xl font-bold text-black">Los más vendidos</Text>
+        <Text className="text-gray-500">Ver todo</Text>
+      </View>
+
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
+        {[1, 2, 3].map((i) => (
+          <View
+            key={i}
+            className="bg-white rounded-3xl p-4 w-40 mr-4 shadow-sm"
+          >
+            <Image
+              source={{ uri: "https://picsum.photos/200/310?random=" + i }}
+              className="w-full h-48 rounded-2xl"
+            />
+            <Text className="font-semibold mt-3 text-black">Book title</Text>
+            <Text className="text-gray-500">$19.99</Text>
+          </View>
+        ))}
+      </ScrollView>
+
+      {/* BUTTON EXPLORE BOOKS */}
+      <BooksButton
+        onPress={() => {
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+          router.push("/(stack)/landing/Explore");
+        }}
+      >
         Explorar libros
-      </Text>
-    </TouchableOpacity>
-  </ImageBackground>
-</View>
+      </BooksButton>
 
-      {/* FEATURED BOOKS */}
-      <View className="px-5 py-8">
-        <Text className="text-white text-2xl font-bold mb-5">
-          Libros destacados
-        </Text>
-
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          {[1,2,3].map((item) => (
-            <View
-              key={item}
-              className="bg-[#1e293b] rounded-2xl p-4 mr-4 w-[180px]"
-            >
-              <Image
-                source={{ uri: "https://picsum.photos/200/300" }}
-                className="h-[200px] w-full rounded-xl"
-              />
-              <Text className="text-white font-semibold mt-3">
-                Título del libro
-              </Text>
-              <Text className="text-gray-400 text-sm mt-1">
-                $19.99
-              </Text>
-            </View>
-          ))}
-        </ScrollView>
-      </View>
-
-      {/* CATEGORIES */}
-      <View className="px-5 py-8 bg-[#020617] rounded-t-3xl">
-        <Text className="text-white text-2xl font-bold mb-4">
-          Categoriass
-        </Text>
-
-        <View className="flex-row flex-wrap justify-between">
-          {["Fiction", "Romance", "Business", "Technology"].map((cat) => (
-            <View
-              key={cat}
-              className="bg-[#020617] border border-[#1e293b] rounded-xl px-4 py-3 w-[48%] mb-3"
-            >
-              <Text className="text-white text-center font-medium">
-                {cat}
-              </Text>
-            </View>
-          ))}
-        </View>
-      </View>
-
+      <View className="h-10" />
     </ScrollView>
-  
   );
-}
+};
 
 export default HomeScreen;

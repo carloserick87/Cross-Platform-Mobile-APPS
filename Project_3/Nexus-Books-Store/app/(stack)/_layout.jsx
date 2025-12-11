@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Stack } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 import { AntDesign, Fontisto, Entypo } from "@expo/vector-icons";
-import { View, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity } from "react-native";
 
 const StackLayout = () => {
   const [activeIcon, setActiveIcon] = useState(null);
@@ -12,33 +13,53 @@ const StackLayout = () => {
         screenOptions={{
           headerShown: true,
           headerShadowVisible: false,
-          headerStyle: { backgroundColor: "#2c414f", elevation: 0 },
+          headerStyle: { backgroundColor: "#f7f4f2", elevation: 0 },
           headerTintColor: "#fff",
         }}>
         <Stack.Screen
           name="home/index"
           options={{
-            title: "Inicio",
+            title: "",
             headerRight: () => (
-              <View style={{ flexDirection: "row", gap: 15 }}>
-                
-                <TouchableOpacity onPress={() => setActiveIcon("bell")}>
-                  <AntDesign name="bell" size={24} color={activeIcon === "bell" ? "#00ffcc" : "white"}/>
-                </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => setActiveIcon("settings")}>
-                  <Fontisto
-                    name="player-settings" size={24} color={activeIcon === "settings" ? "#00ffcc" : "white"}/>
-                </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => setActiveIcon("plus")}>
-                  <Entypo name="plus" size={24} color={activeIcon === "plus" ? "#00ffcc" : "white"}/>
-                </TouchableOpacity>
+              <View 
+  style={{ 
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 32,
+  }}
+>
 
-              </View>
+  {/* Ícono izquierda */}
+  <TouchableOpacity onPress={() => setActiveIcon("grid")}>
+    <Ionicons
+      name="grid-outline"
+      size={26}
+      color={activeIcon === "grid" ? "#00ffcc" : "black"}
+    />
+  </TouchableOpacity>
+
+  {/* Avatar derecha */}
+  <TouchableOpacity onPress={() => console.log("Avatar pressed")}>
+    <Image
+      source={{ uri: "https://i.pravatar.cc/150?img=32" }}
+      style={{
+        width: 40,
+        height: 40,
+        borderRadius: 999,
+      }}
+    />
+  </TouchableOpacity>
+
+</View>
+
+
             ),
           }}
         />
+        <Stack.Screen  name="landing/[id]/index"  options={({ route }) => ({ title: `${route.params.id}`})}/>
       </Stack>
     </View>
   );
