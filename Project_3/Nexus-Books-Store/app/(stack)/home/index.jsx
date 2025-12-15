@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, ScrollView, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, ScrollView, TouchableOpacity, Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import BooksButton from "../../../components/BooksButton";
 import * as Haptics from "expo-haptics";
@@ -41,21 +41,23 @@ const HomeScreen = () => {
         <Text className="text-gray-500">Ver todo</Text>
       </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
-        {[1, 2, 3].map((i) => (
-          <View
-            key={i}
-            className="bg-white rounded-3xl p-4 w-40 mr-4 shadow-sm"
-          >
-            <Image
-              source={{ uri: "https://picsum.photos/200/300?random=" + i }}
-              className="w-full h-48 rounded-2xl"
-            />
-            <Text className="font-semibold mt-3 text-black">Título del libro</Text>
-            <Text className="text-gray-500">$22.00</Text>
-          </View>
-        ))}
-      </ScrollView>
+     <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
+     {[1, 2, 3].map((i) => (
+     <Pressable key={i} onPress={() => { console.log("Libro presionado:", i);}}
+      className="mr-4">
+      <View className="bg-white rounded-3xl p-4 w-40 shadow-sm">
+        <Image
+          source={{ uri: "https://picsum.photos/200/300?random=" + i }}
+          className="w-full h-48 rounded-2xl"
+        />
+        <Text className="font-semibold mt-3 text-black">
+          Título del libro
+        </Text>
+        <Text className="text-gray-500">$22.00</Text>
+      </View>
+    </Pressable>
+  ))}
+</ScrollView>
 
       {/* BESTSELLERS */}
       <View className="mb-6 flex-row justify-between items-center">
@@ -64,26 +66,37 @@ const HomeScreen = () => {
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
-        {[1, 2, 3].map((i) => (
-          <View
-            key={i}
-            className="bg-white rounded-3xl p-4 w-40 mr-4 shadow-sm"
-          >
-            <Image
-              source={{ uri: "https://picsum.photos/200/310?random=" + i }}
-              className="w-full h-48 rounded-2xl"
-            />
-            <Text className="font-semibold mt-3 text-black">Book title</Text>
-            <Text className="text-gray-500">$19.99</Text>
-          </View>
-        ))}
-      </ScrollView>
+  {[1, 2, 3].map((i) => (
+    <Pressable
+      key={i}
+      onPress={() => {
+        console.log("Pressed book:", i);
+      }}
+      className="mr-4"
+      style={({ pressed }) => ({
+        opacity: pressed ? 0.85 : 1,
+        transform: [{ scale: pressed ? 0.97 : 1 }],
+      })}
+    >
+      <View className="bg-white rounded-3xl p-4 w-40 shadow-sm">
+        <Image
+          source={{ uri: "https://picsum.photos/200/310?random=" + i }}
+          className="w-full h-48 rounded-2xl"
+        />
+        <Text className="font-semibold mt-3 text-black">
+          Book title
+        </Text>
+        <Text className="text-gray-500">$19.99</Text>
+      </View>
+    </Pressable>
+  ))}
+</ScrollView>
 
       {/* BUTTON EXPLORE BOOKS */}
       <BooksButton
         onPress={() => {
           Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
-          router.push("/(stack)/landing/Explore");
+          router.push("../landing/[id]/index.jsx");
         }}
       >
         Explorar libros
