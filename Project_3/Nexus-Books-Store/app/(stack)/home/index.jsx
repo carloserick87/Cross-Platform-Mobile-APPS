@@ -42,9 +42,12 @@ const HomeScreen = () => {
       </View>
 
      <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-10">
-     {[1, 2, 3].map((i) => (
-     <Pressable key={i} onPress={() => { console.log("Libro presionado:", i);}}
-      className="mr-4">
+  {[1, 2, 3].map((i) => (
+    <Pressable
+      key={i}
+      onPress={() => router.push(`../book/[id]/${i}`)}
+      className="mr-4"
+    >
       <View className="bg-white rounded-3xl p-4 w-40 shadow-sm">
         <Image
           source={{ uri: "https://picsum.photos/200/300?random=" + i }}
@@ -69,9 +72,7 @@ const HomeScreen = () => {
   {[1, 2, 3].map((i) => (
     <Pressable
       key={i}
-      onPress={() => {
-        console.log("Pressed book:", i);
-      }}
+      onPress={() => router.push(`../book/[id]/${i}`)}
       className="mr-4"
       style={({ pressed }) => ({
         opacity: pressed ? 0.85 : 1,
